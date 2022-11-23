@@ -68,7 +68,8 @@ async function respuesta() {
         obtainedNumber = await getNumber();
       } catch (error) {
         console.log(error);
-        process.exit(0);
+        rl.question("Introduce el número: "), (num) => {
+          rl.pause()}
       }
       //Hacer un switch con todas las respuestas
       // Question 1: Mostrar en tabla todos los alumnos
