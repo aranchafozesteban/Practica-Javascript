@@ -170,13 +170,25 @@ async function respuesta() {
 
         // Question 10: Añadir un nuevo alumno - nombre aleatorio, edad aleatoria entre 20 y 50 años, género aleatorio, calificaciones vacío
         case 10: 
-        //Algo de push
-          
+        let newAge = calculateRandomNumber(20, 50);
+        let getRandomNumber = calculateRandomNumber(0,1);
+        let getRandomNumber2 = calculateRandomNumber(0,5)
+        if (getRandomNumber === 0){
+          let newGender = 'female'
+          let newName = availableFemaleNames[getRandomNumber2]
+          students.push({age: newAge, examScores:[], gender: newGender, name:newName })
+        }else{
+          let newGender = 'male'
+          let newName = availableMaleNames[getRandomNumber2]
+          students.push({age: newAge, examScores:[], gender: newGender, name: newName})
+        }
+        console.table(students)
+        break;
+        
         // Question 11: Mostrar el nombre de la persona más jóven
         case 11:
           let getAges = student => student.age;
           let agesStudents = students.map(getAges);
-          console.log(agesStudents)
           let masJoven = Math.min(...agesStudents)
           let index = agesStudents.indexOf(masJoven)
           console.log(students[index].name)
@@ -190,7 +202,7 @@ async function respuesta() {
             return resultado + elemento;
           }, 0);
           let averageAge = sum/students.length
-          console.log(averageAge)
+          console.log('La edad media de todos los alumnos es: ', averageAge)
           break;
 
         // Question 13: Mostrar la edad media de las alumnAs 
@@ -199,14 +211,13 @@ async function respuesta() {
             if (students.gender === 'female'){
               return students.age;
             }})
-          console.log(femaleStudents)
           let obtenerFemaleAges = (femaleStudents) => femaleStudents.age;
           let femaleAges = femaleStudents.map(obtenerFemaleAges);
           const femaleSum = femaleAges.reduce(function (resultado, elemento) {
             return resultado + elemento;
           }, 0);
           let averageFemalesAge = femaleSum/femaleStudents.length
-          console.log(averageFemalesAge)
+          console.log('La edad media de las alumnAs es: ', averageFemalesAge)
           break;
         // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.- FALTA
         case 14:
