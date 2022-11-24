@@ -156,29 +156,16 @@ async function respuesta() {
           }
           break;
 
-        // Question 9: Mostrar los nombres de los alumnos que tengan entre 20 y 25 años -no me sale
+        // Question 9: Mostrar los nombres de los alumnos que tengan entre 20 y 25 años 
         case 9:
-          const joven = (students) =>{
-            if(students.age > 20 && students.age < 25){
-              return true
-            }
-          }
-
-          let index9 = 0
-          let counter9 = 0
-          while (index7 <= numberStudents){
-            if (joven === true){
-              counter9
-              let numberFemale = counterFemale;
-              index7++;
-              console.log('Alumnas: ', numberFemale)
-            }else{
-              counterMale++;
-              let numberMale = counterMale;
-              index7++;
-              console.log('Alumnos: ', numberMale)
-            }
-          }
+          let range ={
+            min: 20,
+            max: 25
+          };
+          let alumnosJovenes = students.filter(function(students){
+            return students.age >=this.min && students.age <= this.max;
+          },range)
+          console.log(alumnosJovenes)
           break;
 
         // Question 10: Añadir un nuevo alumno - nombre aleatorio, edad aleatoria entre 20 y 50 años, género aleatorio, calificaciones vacío

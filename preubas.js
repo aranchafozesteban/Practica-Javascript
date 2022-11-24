@@ -22,3 +22,27 @@ let index = 0
             }
           } 
           break;
+// pregunta 9
+        case 9:
+          const joven = (students) =>{
+            if(students.age > 20 && students.age < 25){
+              return true
+            }
+          }
+
+          let index9 = 0
+          let counter9 = 0
+          while (index7 <= numberStudents){
+            if (joven === true){
+              counter9
+              let numberFemale = counterFemale;
+              index7++;
+              console.log('Alumnas: ', numberFemale)
+            }else{
+              counterMale++;
+              let numberMale = counterMale;
+              index7++;
+              console.log('Alumnos: ', numberMale)
+            }
+          }
+          break;
