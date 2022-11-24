@@ -49,6 +49,12 @@ const alumnas = (students) =>{
   }
 }
 //Si tiene entre 20 y 25 años
+const joven = (students) =>{
+  if(students.age > 20 && students.age < 25){
+    console.log(students.name)
+  }
+}
+
 
 // Proceso asíncrono - Pedir un número por consola y devolver respuesta después:
 // Productor: hacer una promesa
@@ -157,21 +163,45 @@ async function respuesta() {
           }
           break;
 
-        // Question 9: Mostrar los nombres de los alumnos que tengan entre 20 y 25 años 
+        // Question 9: Mostrar los nombres de los alumnos que tengan entre 20 y 25 años -no me sale
         case 9:
-          if 
+          const joven = (students) =>{
+            if(students.age > 20 && students.age < 25){
+              return true
+            }
+          }
 
-      // Question 10: Añadir un nuevo alumno - nombre aleatorio, edad aleatoria entre 20 y 50 años, género aleatorio, calificaciones vacío
+          let index9 = 0
+          let counter9 = 0
+          while (index7 <= numberStudents){
+            if (joven === true){
+              counter9
+              let numberFemale = counterFemale;
+              index7++;
+              console.log('Alumnas: ', numberFemale)
+            }else{
+              counterMale++;
+              let numberMale = counterMale;
+              index7++;
+              console.log('Alumnos: ', numberMale)
+            }
+          }
+          break;
 
-      // Question 11: Mostrar el nombre de la persona más jóven
+        // Question 10: Añadir un nuevo alumno - nombre aleatorio, edad aleatoria entre 20 y 50 años, género aleatorio, calificaciones vacío
+        
+        // Question 11: Mostrar el nombre de la persona más jóven
 
-      // Question 12: Mostrar la edad media de todos los alumnos
+        // Question 12: Mostrar la edad media de todos los alumnos
 
-      // Question 13: Mostrar la edad media de las alumnAs
+        // Question 13: Mostrar la edad media de las alumnAs
 
-      // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.
+        // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.
+        students.forEach(element => {
+          
+        });
 
-      // Questión 15: Ordenar el array de alumnos alfabéticamente en función de si nombre
+        // Questión 15: Ordenar el array de alumnos alfabéticamente en función de su nombre
       }
     } while (obtainedNumber !== 0); // condiciones de continuar permitiendo preguntas
   }
