@@ -109,7 +109,7 @@ async function respuesta() {
             }
           break;
 
-        // Question 4: Eliminar el último alumno de la clase
+        // Question 4: Eliminar el último alumno de la clase -Revisar si tengo tiempo para que no de problemas con undefined
         case 4: 
           console.log('El alumno eliminado ha sido: ', students.pop())
           break;
@@ -169,10 +169,22 @@ async function respuesta() {
           break;
 
         // Question 10: Añadir un nuevo alumno - nombre aleatorio, edad aleatoria entre 20 y 50 años, género aleatorio, calificaciones vacío
-        
+        case 10: 
+          
         // Question 11: Mostrar el nombre de la persona más jóven
+        case 11:
+          
 
-        // Question 12: Mostrar la edad media de todos los alumnos
+        // Question 12: Mostrar la edad media de todos los alumnos 
+        case 12:
+          let obtenerAges = student => student.age;
+          let edades = students.map(obtenerAges);
+          const suma = edades.reduce(function (resultado, elemento) {
+            return resultado + elemento;
+          }, 0);
+          let averageAge = suma/students.length
+          console.log(averageAge)
+          break;
 
         // Question 13: Mostrar la edad media de las alumnAs
         case 13:

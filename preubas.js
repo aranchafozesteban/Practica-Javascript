@@ -10,6 +10,13 @@ let index = 0
           } 
           console.log(students[counter])
 
+
+// pregunta 4
+          case 4: 
+        
+        console.log('El alumno eliminado ha sido: ', students.pop())
+          break;
+
 //pregunta 6
           case 6: 
           let index6 = 0
