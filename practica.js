@@ -178,19 +178,29 @@ async function respuesta() {
         // Question 12: Mostrar la edad media de todos los alumnos 
         case 12:
           let obtenerAges = student => student.age;
-          let edades = students.map(obtenerAges);
-          const suma = edades.reduce(function (resultado, elemento) {
+          let ages = students.map(obtenerAges);
+          const sum = ages.reduce(function (resultado, elemento) {
             return resultado + elemento;
           }, 0);
-          let averageAge = suma/students.length
+          let averageAge = sum/students.length
           console.log(averageAge)
           break;
 
-        // Question 13: Mostrar la edad media de las alumnAs
+        // Question 13: Mostrar la edad media de las alumnAs 
         case 13:
-          let mediumage = Object.fromEntries(
-            arrFruits.map(fruit => [ fruit, 0 ])
-        );
+          let femaleStudents = students.filter(function(students){
+            if (students.gender === 'female'){
+              return students.age;
+            }})
+          console.log(femaleStudents)
+          let obtenerFemaleAges = (femaleStudents) => femaleStudents.age;
+          let femaleAges = femaleStudents.map(obtenerFemaleAges);
+          const femaleSum = femaleAges.reduce(function (resultado, elemento) {
+            return resultado + elemento;
+          }, 0);
+          let averageFemalesAge = femaleSum/femaleStudents.length
+          console.log(averageFemalesAge)
+          break;
         // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.
         case 14:
           let index14 
