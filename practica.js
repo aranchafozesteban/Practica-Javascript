@@ -120,17 +120,10 @@ async function respuesta() {
           console.log('El alumno eliminado aleatoriamente ha sido: ', students. splice(posicion,1))
           break;
 
-        // Question 6: Mostrar todos los datos de las alumnAs - NO ME SALE :(
+        // Question 6: Mostrar todos los datos de las alumnAs 
         case 6: 
-          let index6 = 0
-          while (index6 <= numberStudents){
-            if (alumnas === true){
-              console.log(students[index6])
-              index6++;
-            }else{
-              index6++;
-            }
-          } 
+          let femaleData = students.filter(alumna => alumna.gender === 'female')
+          console.log(femaleData)  
           break;
 
         // Question 7: Mostrar número de chicos y chicas - REVISAR
@@ -195,11 +188,17 @@ async function respuesta() {
         // Question 12: Mostrar la edad media de todos los alumnos
 
         // Question 13: Mostrar la edad media de las alumnAs
-
+        case 13:
+          let mediumage = Object.fromEntries(
+            arrFruits.map(fruit => [ fruit, 0 ])
+        );
         // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.
-        students.forEach(element => {
-          
-        });
+        case 14:
+          let index14 
+          let posicion = calculateRandomNumber(0, 10);
+          for (index14 = 0; index14 < students.length; index14++) {
+            students.examScores[index14] = posicion; 
+          }
 
         // Questión 15: Ordenar el array de alumnos alfabéticamente en función de su nombre
       }

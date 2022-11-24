@@ -9,3 +9,16 @@ let index = 0
             }
           } 
           console.log(students[counter])
+
+//pregunta 6
+          case 6: 
+          let index6 = 0
+          while (index6 <= numberStudents){
+            if (alumnas === true){
+              console.log(students[index6])
+              index6++;
+            }else{
+              index6++;
+            }
+          } 
+          break;
