@@ -97,7 +97,7 @@ async function respuesta() {
 
         // Question 2: Mostrar el número de alumnos que hay en clase
         case 2:
-          console.log(students.length)
+          console.log('Número de estudiantes en clase: ', students.length)
           break;
 
         // Question 3: Mostrar todos los nombres de los alumnos. 
@@ -170,10 +170,17 @@ async function respuesta() {
 
         // Question 10: Añadir un nuevo alumno - nombre aleatorio, edad aleatoria entre 20 y 50 años, género aleatorio, calificaciones vacío
         case 10: 
+        //Algo de push
           
         // Question 11: Mostrar el nombre de la persona más jóven
         case 11:
-          
+          let getAges = student => student.age;
+          let agesStudents = students.map(getAges);
+          console.log(agesStudents)
+          let masJoven = Math.min(...agesStudents)
+          let index = agesStudents.indexOf(masJoven)
+          console.log(students[index].name)
+          break;
 
         // Question 12: Mostrar la edad media de todos los alumnos 
         case 12:
@@ -201,7 +208,7 @@ async function respuesta() {
           let averageFemalesAge = femaleSum/femaleStudents.length
           console.log(averageFemalesAge)
           break;
-        // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.
+        // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.- FALTA
         case 14:
           let index14 
           let posicion = calculateRandomNumber(0, 10);
