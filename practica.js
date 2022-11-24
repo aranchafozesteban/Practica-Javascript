@@ -41,13 +41,14 @@ const isInt = (str) => {
   }
 };
 //Si es alumna
-const alumnas = (str) =>{
-  if (gender.students === 'female'){
+const alumnas = (students) =>{
+  if (students.gender === 'female'){
     return true;
    }else{
     return false;
   }
 }
+//Si tiene entre 20 y 25 años
 
 // Proceso asíncrono - Pedir un número por consola y devolver respuesta después:
 // Productor: hacer una promesa
@@ -70,6 +71,7 @@ async function respuesta() {
     let numberStudents = students.length -1
     let posicion = calculateRandomNumber(0, 100);
     let obtainedNumber;
+    
    
     do {
       try {
@@ -86,41 +88,78 @@ async function respuesta() {
         case 1:
           console.table(students)
           break;
+
         // Question 2: Mostrar el número de alumnos que hay en clase
         case 2:
           console.log(students.length)
           break;
-        // Question 3: Mostrar todos los nombres de los alumnos.
+
+        // Question 3: Mostrar todos los nombres de los alumnos. 
         case 3:
-          console.log(students[0].name, students[1].name)
+          let index3 = 0
+          while (index3 <= numberStudents){
+            console.log(students[index3].name)
+              index3++;
+            }
           break;
+
         // Question 4: Eliminar el último alumno de la clase
         case 4: 
           console.log('El alumno eliminado ha sido: ', students.pop())
           break;
+
         // Question 5: Eliminar un alumno aleatoriamente 
         case 5:
           posicion = calculateRandomNumber(0,students.length -1)
           console.log('El alumno eliminado aleatoriamente ha sido: ', students. splice(posicion,1))
           break;
-        // Question 6: Mostrar todos los datos de las alumnAs
+
+        // Question 6: Mostrar todos los datos de las alumnAs - NO ME SALE :(
         case 6: 
-          let index = 0
-          let counter = 0
-          while (index <= numberStudents){
-            if (alumnas === 'true'){
-              counter++;
-              index++;
+          let index6 = 0
+          while (index6 <= numberStudents){
+            if (alumnas === true){
+              console.log(students[index6])
+              index6++;
             }else{
-              index++;
+              index6++;
             }
           } 
-          console.log(students[counter])
-      // Question 7: Mostrar número de chicos y chicas 
+          break;
 
-      // Question 8: Mostrar true o false en función de si todos son alumnAs
+        // Question 7: Mostrar número de chicos y chicas - REVISAR
+        case 7:
+          let index7 = 0
+          let counterFemale = 0
+          let counterMale = 0
+          while (index7 <= numberStudents){
+            if (students[index7].gender === 'female'){
+              counterFemale++;
+              let numberFemale = counterFemale;
+              index7++;
+              console.log('Alumnas: ', numberFemale)
+            }else{
+              counterMale++;
+              let numberMale = counterMale;
+              index7++;
+              console.log('Alumnos: ', numberMale)
+            }
+          }
+          
+          break;
 
-      // Question 9: Mostrar los nombres de los alumnos que tengan entre 20 y 25 años 
+        // Question 8: Mostrar true o false en función de si todos son alumnAs
+        case 8:
+          if (alumnas === true){
+            console.log('True')
+          }else{
+            console.log('False')
+          }
+          break;
+
+        // Question 9: Mostrar los nombres de los alumnos que tengan entre 20 y 25 años 
+        case 9:
+          if 
 
       // Question 10: Añadir un nuevo alumno - nombre aleatorio, edad aleatoria entre 20 y 50 años, género aleatorio, calificaciones vacío
 
