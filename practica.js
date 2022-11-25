@@ -221,13 +221,47 @@ async function respuesta() {
           break;
         // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.- FALTA
         case 14:
-          let index14 
-          let posicion = calculateRandomNumber(0, 10);
-          for (index14 = 0; index14 < students.length; index14++) {
-            students.examScores[index14] = posicion; 
+          let index14 = 0
+          let grade = calculateRandomNumber(0, 10);
+          while (index14 <= students.length-1){
+            students[index14].examScores = grade;
+            
+            index14++;
           }
-
+          console.table(students);
+          break;
+          //students[index14].examScores = grade;
+            //let addGrades = notesStudents.fill(grade, 0,1);
+            //notesStudents.defineProperty([index14], examScores, grade)
+            
+            //let addNotes = notesStudents.fill(grade, 0,1);
+            
+          
+          
+          //let index14 
+          //let posicion = calculateRandomNumber(0, 10);
+          //let notesStudents = students.examScores;
+          //let addNotes = notesStudents.fill(posicion, 0,1);
+         // console.log(addNotes);
+          //for (index14 = 0; index14 < students.length; index14++) {
+            //students.examScores[index14] = posicion; 
+          //}
+         
         // Questión 15: Ordenar el array de alumnos alfabéticamente en función de su nombre
+        case 15:
+          students.sort((a,b) =>{
+            if (a.name.toLowerCase() < b.name.toLowerCase()){
+              return -1;
+            }
+            if (a.name.toLowerCase() > b.name.toLowerCase()){
+              return 1;
+            } return 0;
+          })
+          console.table(students)
+          break;
+        case 16:
+          
+          break;
       }
     } while (obtainedNumber !== 0); // condiciones de continuar permitiendo preguntas
   }

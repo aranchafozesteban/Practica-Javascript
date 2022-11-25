@@ -53,3 +53,19 @@ let index = 0
             }
           }
           break;
+
+          case 14:
+          let index14 = 0
+          let grade = calculateRandomNumber(0, 10);
+          while (index14 <= students.length-1){
+            let notesStudents =students.forEach(student =>{
+            students[index14].examScores = grade;
+            
+            index14++;
+          })
+
+          while (index14 <= students.length-1){
+            students[index14].examScores = grade;
+            
+            index14++;
+          }
