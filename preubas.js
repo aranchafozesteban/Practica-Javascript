@@ -69,3 +69,15 @@ let index = 0
             
             index14++;
           }
+
+
+          case 14:
+          let index14 = 0
+          let grade = calculateRandomNumber(0, 10);
+          while (index14 <= students.length-1){
+            students[index14].examScores = grade;
+            
+            index14++;
+          }
+          console.table(students);
+          break;

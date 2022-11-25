@@ -55,7 +55,21 @@ const joven = (students) =>{
   }
 }
 
-
+    console.log('1- Mostrar en formato de tabla todos los alumnos.')
+    console.log('2- Mostrar por consola la cantidad de alumnos que hay en clase')
+    console.log('3- Mostrar por consola todos los nombres de los alumnos.')
+    console.log('4- Eliminar el último alumno de la clase.')
+    console.log('5- Eliminar un alumno aleatoriamente de la clase.')
+    console.log('6- Mostrar por consola todos los datos de los alumnos que son chicas.')
+    console.log('7- Mostrar por consola el número de chicos y chicas que hay en la clase.')
+    console.log('8- Mostrar true o false por consola si todos los alumnos de la clase son chicas.')
+    console.log('9- Mostrar por consola los nombres de los alumnos que tengan entre 20 y 25 años.')
+    console.log('10- Añadir un alumno nuevo')
+    console.log('11- Mostrar por consola el nombre de la persona más joven de la clase')
+    console.log('12- Mostrar por consola la edad media de todos los alumnos de la clase.')
+    console.log('13- Mostrar por consola la edad media de las chicas de la clase.')
+    console.log('14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.')
+    console.log('15- Ordenar el array de alumnos alfabéticamente según su nombre.')
 // Proceso asíncrono - Pedir un número por consola y devolver respuesta después:
 // Productor: hacer una promesa
 function getNumber() {
@@ -103,7 +117,7 @@ async function respuesta() {
         // Question 3: Mostrar todos los nombres de los alumnos. 
         case 3:
           let index3 = 0
-          while (index3 <= numberStudents){
+          while (index3 <= students.length-1){
             console.log(students[index3].name)
               index3++;
             }
@@ -126,25 +140,26 @@ async function respuesta() {
           console.log(femaleData)  
           break;
 
-        // Question 7: Mostrar número de chicos y chicas - REVISAR
+        // Question 7: Mostrar número de chicos y chicas 
         case 7:
           let index7 = 0
           let counterFemale = 0
           let counterMale = 0
-          while (index7 <= numberStudents){
+          while (index7 <= students.length-1){
             if (students[index7].gender === 'female'){
               counterFemale++;
               let numberFemale = counterFemale;
               index7++;
-              console.log('Alumnas: ', numberFemale)
+              
             }else{
               counterMale++;
               let numberMale = counterMale;
               index7++;
-              console.log('Alumnos: ', numberMale)
+              
             }
           }
-          
+          console.log('Alumnas: ', counterFemale);
+          console.log('Alumnos: ', counterMale);
           break;
 
         // Question 8: Mostrar true o false en función de si todos son alumnAs
@@ -222,30 +237,13 @@ async function respuesta() {
         // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.- FALTA
         case 14:
           let index14 = 0
-          let grade = calculateRandomNumber(0, 10);
           while (index14 <= students.length-1){
-            students[index14].examScores = grade;
+            students[index14].examScores = calculateRandomNumber(0,10);
             
             index14++;
           }
           console.table(students);
           break;
-          //students[index14].examScores = grade;
-            //let addGrades = notesStudents.fill(grade, 0,1);
-            //notesStudents.defineProperty([index14], examScores, grade)
-            
-            //let addNotes = notesStudents.fill(grade, 0,1);
-            
-          
-          
-          //let index14 
-          //let posicion = calculateRandomNumber(0, 10);
-          //let notesStudents = students.examScores;
-          //let addNotes = notesStudents.fill(posicion, 0,1);
-         // console.log(addNotes);
-          //for (index14 = 0; index14 < students.length; index14++) {
-            //students.examScores[index14] = posicion; 
-          //}
          
         // Questión 15: Ordenar el array de alumnos alfabéticamente en función de su nombre
         case 15:
@@ -259,8 +257,46 @@ async function respuesta() {
           })
           console.table(students)
           break;
+        // Question 16: Mostrar por consola el alumno con mejores notas 
         case 16:
-          
+          let getExamScores = student => student.examScores;
+          let scoresStudents = students.map(getExamScores);
+          let mejorAlumno = Math.max(...scoresStudents)
+          let index16 = scoresStudents.indexOf(mejorAlumno)
+          console.log(students[index16])
+          break;
+        // Question 17: Mostrar nota media más alta y el nombre del alumno
+        case 17:
+          let getExamScores17 = student => student.examScores;
+          let scoresStudents17 = students.map(getExamScores17);
+          let mejorAlumno17 = Math.max(...scoresStudents17)
+          let index17 = scoresStudents17.indexOf(mejorAlumno17)
+          console.log(students[index17].examScores)
+          console.log(students[index17].name)
+          break;
+        // Question 18: Añadir un punto extra a cada nota existente de todos los alumnos. Recordad que la nota máxima posible es 10
+        case 18:
+          let index18 = 0
+          while (index18 <= students.length-1){
+            if (students[index18].examScores <10){
+              students[index18].examScores++;
+            }
+            
+            index18++;
+          }
+          console.table(students);
+          break;
+        // Question 19: Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.
+        case 19: 
+        let index19 = 0
+          while (index19 <= students.length-1){
+            if (students[index19].examScores.length === 0){
+              students[index19].examScores =10;
+            }
+            
+            index19++;
+          }
+          console.table(students);
           break;
       }
     } while (obtainedNumber !== 0); // condiciones de continuar permitiendo preguntas
