@@ -70,6 +70,11 @@ const joven = (students) =>{
     console.log('13- Mostrar por consola la edad media de las chicas de la clase.')
     console.log('14- Añadir nueva nota a los alumnos. Por cada alumno de la clase, tendremos que calcular una nota de forma aleatoria(número entre 0 y 10) y añadirla a su listado de notas.')
     console.log('15- Ordenar el array de alumnos alfabéticamente según su nombre.')
+    console.log('16- Mostrar por consola el alumno de la clase con las mejores notas.')
+    console.log('17- Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.')
+    console.log('18- Añadir un punto extra a cada nota existente de todos los alumnos. Recordad que la nota máxima posible es 10')
+    console.log('19- Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.')
+    
 // Proceso asíncrono - Pedir un número por consola y devolver respuesta después:
 // Productor: hacer una promesa
 function getNumber() {
