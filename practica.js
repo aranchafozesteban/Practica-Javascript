@@ -91,7 +91,7 @@ function getNumber() {
     });
     return promise;
   }
-// Consumidor: mostrar resultados cuando reciba resolve -->revisar variables y try and catch
+// Consumidor: mostrar resultados cuando reciba resolve 
 async function respuesta() {
     let numberStudents = students.length -1
     let posicion = calculateRandomNumber(0, 100);
@@ -128,7 +128,7 @@ async function respuesta() {
             }
           break;
 
-        // Question 4: Eliminar el último alumno de la clase -Revisar si tengo tiempo para que no de problemas con undefined
+        // Question 4: Eliminar el último alumno de la clase 
         case 4: 
           console.log('El alumno eliminado ha sido: ', students.pop())
           break;
@@ -239,7 +239,7 @@ async function respuesta() {
           let averageFemalesAge = femaleSum/femaleStudents.length
           console.log('La edad media de las alumnAs es: ', averageFemalesAge)
           break;
-        // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.- FALTA
+        // Question 14: Añadir una nueva nota (entre 0-10) aleatoria a cada alumno y añadirla a su lista.
         case 14:
           let index14 = 0
           while (index14 <= students.length-1){
